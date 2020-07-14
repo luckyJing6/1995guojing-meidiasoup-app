@@ -1,0 +1,98 @@
+/*
+ * @Author: 郭靖 
+ * @Date: 2020-05-27 16:39:15 
+ * @Last Modified by: 郭靖
+ * @Last Modified time: 2020-06-16 11:03:13
+ */
+@import '../../common/stylus/variable.styl'
+
+// mixin
+_button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius)
+  padding: $padding-vertical $padding-horizontal
+  font-size: $font-size
+  border-radius: $border-radius
+
+_button-variat($bg, $color, $border-color)
+  background-color: $bg
+  color: $color
+  border-color: $border-color
+  &:hover
+    background: mix($color-white, $bg, $btn-mix-hover-percent)
+    border-color: mix($color-white, $bg, $btn-mix-hover-percent)
+  &:active
+    background: mix($color-grey, $bg, $btn-mix-hover-percent)
+    border-color: mix($color-grey, $bg, $btn-mix-hover-percent)
+  &.ggl-btn-is-disabled,
+  &.ggl-btn-is-disabled:hover
+    cursor: not-allowed
+    background: mix($color-white, $bg, $btn-mix-disabled-percent)
+    border-color: mix($color-white, $bg, $btn-mix-disabled-percent)
+  &.ggl-btn-is-shadow
+    box-shadow: 0 0 $btn-shadow-range mix($color-white, $bg, $btn-mix-shadow-percent)
+
+.ggl-btn
+  display: inline-block
+  cursor: pointer
+  outline: 0
+  border: 1px solid transparent
+  transition: 0.1s
+  user-select: none
+  font-family: 'PingFang SC'
+
+  // button icon
+  &-icon
+    margin-right: 5px
+
+  // button size
+  &-size-large
+    _button-size($btn-size-large-padding-vertical, $btn-size-large-padding-horizontal, $btn-size-large-font-size, $btn-size-large-border-radius)
+
+  &-size-default
+    _button-size($btn-size-default-padding-vertical, $btn-size-default-padding-horizontal, $btn-size-default-font-size, $btn-size-default-border-radius)
+
+  &-size-small
+    _button-size($btn-size-small-padding-vertical, $btn-size-small-padding-horizontal, $btn-size-small-font-size, $btn-size-small-border-radius)
+    
+
+  // button round
+  &-is-round
+    border-radius: $btn-round-radius
+
+  &-is-circle
+    border-radius: 50%
+    padding: 0
+    width: $btn-circle-width
+    height: $btn-circle-height
+    .ggl-btn-icon
+      margin: 0
+      font-size: $fontsize-large-xx
+
+  // button type
+  &-type-primary
+    _button-variat($btn-type-primary-background-color, $btn-type-primary-color, $btn-type-primary-border-color)
+  
+  &-type-default
+    _button-variat($btn-type-default-background-color, $btn-type-default-color, $btn-type-default-border-color)
+    &:hover
+      border-color: mix($color-white, $color-primary, $btn-mix-hover-percent)
+      color: mix($color-white, $color-primary, $btn-mix-hover-percent)
+    // default diabled   
+    &.ggl-btn-is-disabled,
+    &.ggl-btn-is-disabled:hover
+      border-color: $btn-type-default-border-color
+      color: $btn-type-default-color
+      background: mix($color-white, $color-light-grey-xxxx, $btn-mix-disabled-percent)
+    &.ggl-btn-is-shadow  
+      box-shadow: 0 0 $btn-shadow-range mix($color-white, $color-light-grey-x, $btn-mix-shadow-percent)
+
+  &-type-success
+    _button-variat($btn-type-success-background-color, $btn-type-success-color, $btn-type-success-border-color)
+
+  &-type-warning
+    _button-variat($btn-type-warning-background-color, $btn-type-warning-color, $btn-type-warning-border-color)
+
+  &-type-error
+    _button-variat($btn-type-error-background-color, $btn-type-error-color, $btn-type-error-border-color)
+
+
+

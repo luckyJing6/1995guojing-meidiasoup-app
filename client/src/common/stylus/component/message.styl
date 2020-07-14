@@ -1,0 +1,51 @@
+/*
+ * @Author: 郭靖 
+ * @Date: 2020-06-08 16:38:11 
+ * @Last Modified by: 郭靖
+ * @Last Modified time: 2020-06-10 18:07:12
+ */
+@import '../../common/stylus/variable.styl'
+// 所有的类型枚举
+$types = { 
+  'info': $message-info-color,
+  'success': $message-success-color,
+  'warning': $message-warning-color,
+  'error': $message-error-color
+}
+
+// mixin
+_icon-color($color)
+  .ggl-message-icon
+    color: $color
+
+// 设置类型
+_type()
+  for type, color in $types
+    &.ggl-message-type-{type}
+      _icon-color(color)
+
+// styl
+.ggl-message
+  position: fixed
+  display: flex
+  align-items: center
+  background: white
+  color: $color-text-default
+  left: 50%
+  top: 20px
+  transform: translateX(-50%)
+  overflow hidden
+  transition: opacity 0.3s, transform .4s, top 0.4s
+  padding: $message-padding
+  border-radius: $message-border-radius
+  box-shadow: 0 0 5px $message-shadow-color
+  cursor pointer
+  _type()
+
+.ggl-message-fade-enter,
+.ggl-message-fade-leave-active
+  opacity: 0
+  transform: translate(-50%, -100%)
+
+
+

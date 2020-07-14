@@ -1,0 +1,206 @@
+@import './var/color.styl'
+body, html
+  margin 0
+  padding 0
+  color #515a6e
+  font-size: 14px
+.ggl-page
+  width 100vw
+  height calc(100vh - 60px)
+for i in 0 2 3 4 5 10 15 20 30 32 35 40 50 60 70 80 90 100 110 120 130 140 150 180 200 220 250 300 350 400 500 600
+  .ggl-min-h-{i}
+    min-height unit(i, 'px')
+  .ggl-h-{i}
+    height unit(i, 'px')
+  .ggl-line-h-{i}
+    line-height unit(i, 'px')
+  .ggl-w-{i}
+    width unit(i, 'px')
+  .ggl-margin-top-{i}
+    margin-top unit(i, 'px')
+  .ggl-margin-btm-{i}
+    margin-bottom unit(i, 'px')
+  .ggl-margin-left-{i}
+    margin-left unit(i, 'px')
+  .ggl-margin-right-{i}
+    margin-right unit(i, 'px')
+  .ggl-margin-0-{i}
+    margin 0 unit(i, 'px')
+  .ggl-margin-{i}-0
+    margin unit(i, 'px') 0
+  .ggl-margin-{i}
+    margin unit(i, 'px')
+  .ggl-padding-top-{i}
+    padding-top unit(i, 'px')
+  .ggl-padding-btm-{i}
+    padding-bottom unit(i, 'px')
+  .ggl-padding-left-{i}
+    padding-left unit(i, 'px')
+  .ggl-padding-right-{i}
+    padding-right unit(i, 'px')
+  .ggl-padding-0-{i}
+    padding 0 unit(i 'px')
+  .ggl-padding-{i}-0
+    padding unit(i 'px') 0
+  .ggl-padding-{i}
+    padding unit(i 'px')
+  .ggl-flex-width-{i}
+    flex 0 0 unit(i 'px')
+.ggl-100-vh
+  height 100vh
+.ggl-100-vw
+  width 100vw
+.ggl-w-per50
+  width 50%
+.ggl-w-per100
+  width 100%
+/*
+  flex布局
+*/
+.ggl-flex
+  display flex
+.ggl-flex-center
+  justify-content center
+.ggl-flex-align
+  align-items center
+.ggl-flex-column
+  flex-direction column
+.ggl-flex-top
+  align-items flex-start
+for i in 1 2 3 4 5 6 7 8 9
+  .ggl-flex-{i}
+    flex unit(i, '')
+.ggl-flex-wrap
+  flex-wrap wrap
+/*
+  鼠标样式
+*/
+.ggl-pointer
+  cursor pointer
+/*
+  字体位置
+  字体颜色
+  字体超出不换行
+*/
+.ggl-text-title
+  font-size 18px
+  font-weight 500
+.ggl-text-center
+  text-align center
+.ggl-text-right
+  text-align right
+.ggl-text-left
+  text-align left
+.ggl-no-wrap
+  text-overflow ellipsis
+  overflow hidden
+  white-space nowrap
+/* flag */
+.ggl-flag-wrap
+  position relative
+.ggl-flag
+  width 100%
+  height 100%
+  position absolute
+  top 0
+  left 0
+  z-index 1
+  cursor not-allowed
+.ggl-wh-center
+  position absolute
+  left 50%
+  top 50%
+  transform translate3d(-50%, -50%, 0)
+// 剧中
+.ggl-abs-top-right-center
+  position absolute
+  right 0
+  top 50%
+  transform translateY(-50%)
+/*
+  边框的位置 与颜色
+  $color-boder = #f0f0f0
+*/
+.ggl-border
+  border 1px solid $color-border
+.ggl-border-top
+  border-top 1px solid $color-border
+.ggl-border-right
+  border-right 1px solid $color-border
+.ggl-border-btm
+  border-bottom 1px solid $color-border
+.ggl-border-left
+  border-left 1px solid $color-border
+.ggl-border-btm-0
+  border-bottom 0
+.ggl-border-top-dashed
+  border-top 1px dashed $color-border
+.ggl-border-btm-dashed
+  border-bottom 1px dashed $color-border
+/* 阴影 */
+for i in 2 4 5 6 8 10 15 20
+  .ggl-boxshadow-{i}
+    box-shadow 0 0 unit(i, 'px') 0 rgba(200, 200, 200, 0.5)
+  .ggl-radius-{i}
+    border-radius unit(i, 'px')
+/*
+  背景颜色，图片在padding里
+*/
+.ggl-bg-body
+  background $color-background
+.ggl-bg-main
+  background $color-background-d
+.ggl-bg-active
+  background $color-background-l
+.ggl-bg-white
+  background white
+.ggl-bg-color-pad
+  background-clip padding-box
+.ggl-bg-image-pad
+  background-origin padding-box
+.ggl-inline-block
+  display inline-block
+.ggl-overflow
+  overflow hidden
+/*
+  float 布局
+*/
+.ggl-float-right
+  float right
+.ggl-float-left
+  float left
+.ggl-clear-both
+  clear both
+/* 字体 */
+for i in 10 11 12 13 14 15 16 17 18 19 20 25 30
+  .ggl-font-{i}
+    font-size unit(i, 'px')
+for i in 400 500 600 700
+  .ggl-font-w-{i}
+    font-weight unit(i, '')
+/*
+test
+*/
+.ggl-test-red
+  background red
+  color white
+.ggl-color-d
+  color #666
+.ggl-color-warn
+  color #ff9900
+.ggl-color-black
+  color black
+.ggl-color-primary
+  color #2d8cf0
+.ggl-color-red
+  color #ed4014
+.ggl-color-white
+  color white
+/*  */
+.ggl-d-scroll
+  &::-webkit-scrollbar
+    display none
+.ggl-circle
+  border-radius 50%
+.ggl-relative
+  position relative

@@ -1,0 +1,60 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build:production": "vue-cli-service build",
+    "build:prodTest": "vue-cli-service build --mode prodTest",
+    "build:noCND": "vue-cli-service build --mode prodNoCdn",
+    "upload:production": "cross-env VUE_APP_BUILD_ENV=production node config/upload.js",
+    "upload:prodTest": "cross-env VUE_APP_BUILD_ENV=prodTest node config/upload.js",
+    "product:production": "npm run build:production && npm run upload:production",
+    "product:prodTest": "npm run build:prodTest && npm run upload:prodTest",
+    "dev": "vue-cli-service serve",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "faker": "^4.1.0",
+    "good-storage": "^1.1.1",
+    "js-cookie": "^2.2.1",
+    "mediasoup-client": "^3.6.5",
+    "socket.io-client": "^2.3.0",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.17.7",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-plugin-eslint": "~4.3.0",
+    "@vue/cli-service": "~4.3.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

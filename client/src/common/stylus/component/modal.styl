@@ -1,0 +1,89 @@
+/*
+ * @Author: 郭靖 
+ * @Date: 2020-06-10 17:41:00 
+ * @Last Modified by: 郭靖
+ * @Last Modified time: 2020-06-10 20:33:36
+ */
+@import '../../common/stylus/variable.styl'
+
+
+.ggl-modal
+
+  // dask
+  &-dask
+    position: fixed
+    top: 0
+    left: 0
+    width 100vw
+    height 100vh
+    background-color: $modal-dask-bg-color
+    transition: all 0.3s
+    opacity: 0.4
+
+  // main
+  &-main
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate3d(-50%, -50%, 0)
+    background-color: $modal-main-bg-color
+    transition: all 0.3s
+    padding: 10px 20px
+    width: $modal-main-width
+    border-radius: $modal-main-border-radius
+    // title
+    .ggl-modal-title
+      position: relative
+      padding-top: 5px
+      margin-bottom: 20px
+      .ggl-modal-title-main
+        display: flex
+        align-items: center
+        .ggl-modal-title-text
+          font-size: $modal-title-font-size
+          color: $modal-title-color
+        .ggl-modal-icon
+          font-size: $modal-title-font-size
+          margin-right: 10px
+      .ggl-modal-close
+        position: absolute
+        font-size: 16px
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+    
+    .ggl-modal-content
+      margin-bottom: 20px
+      .ggl-modal-input
+        width 100%
+        margin-top: 15px
+
+    // footer
+    .ggl-modal-footer
+      text-align: right
+      .ggl-modal-btn
+        margin-right: 10px
+
+
+// center
+.ggl-modal
+  &-center
+    .ggl-modal-title-main
+      justify-content: center
+    .ggl-modal-content
+      text-align: center
+    .ggl-modal-footer 
+      text-align: center
+
+
+
+
+
+.ggl-modal-opacity-enter,
+.ggl-modal-opacity-leave-active
+  opacity: 0
+
+.ggl-modal-fade-enter,
+.ggl-modal-fade-leave-active
+  opacity: 0
+  transform: translate(-50%, -100%)

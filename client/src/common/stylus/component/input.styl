@@ -1,0 +1,90 @@
+/*
+ * @Author: 郭靖 
+ * @Date: 2020-06-09 16:21:03 
+ * @Last Modified by: 郭靖
+ * @Last Modified time: 2020-06-10 20:45:32
+ */
+@import '../../common/stylus/variable.styl'
+
+
+.ggl-input
+  position relative
+  box-sizing: border-box
+  display: inline-block
+  color: $color-text-default
+  width: 100%
+  .ggl-input-inner
+    box-sizing: border-box
+    outline: none
+    padding: 0 15px
+    border-radius: $input-border-radius
+    border: 1px solid $input-border-color
+    transition: all 0.3s
+    color: $color-text-default
+    height: 100%
+    width 100%
+    cursor: pointer
+    &:hover
+      border-color: $input-hover-border-color
+    &:focus
+      border-color: $input-focus-border-color
+  .ggl-input-icon
+    color: $input-icon-color   
+    
+// 设置size
+.ggl-input
+  &-large
+    height: $input-large-height
+    .ggl-input-icon
+      font-size: $input-large-icon-size
+
+  &-default
+    height: $input-default-height
+    .ggl-input-icon
+      font-size: $input-default-icon-size
+  
+  &-small
+    height: $input-small-height
+    .ggl-input-icon
+      font-size: $input-small-icon-size
+
+// 设置prefix
+.ggl-input
+  &-prefix
+    .ggl-input-inner
+      padding-left: 30px
+    .ggl-prefix-icon
+      position: absolute
+      display: inline-block
+      width: 35px
+      text-align: center
+      top: 50%
+      transform: translateY(-50%)     
+  &-suffix
+    .ggl-input-inner
+      padding-right: 30px
+    .ggl-suffix-icon
+      position: absolute
+      display: inline-block
+      width: 35px
+      text-align: center
+      top: 50%
+      right: 0
+      transform: translateY(-50%)     
+      
+// disable
+.ggl-input
+  &-disabled
+    .ggl-input-inner
+      cursor: not-allowed
+      background-color: $input-disabled-bg-color
+      border-color: $input-disabled-border-color
+      &:hover,
+      &:focus
+        border-color: $input-disabled-border-color
+
+
+
+  
+  
+      
